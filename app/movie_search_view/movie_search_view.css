@@ -1,0 +1,29 @@
+.sidebar-user-info
+{
+    height: 9em;
+    /*background-image: url(images/user_info_background.jpg);
+    background-size: cover;*/
+}
+
+.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme
+{
+    color: white;
+}
+
+.md-avatar
+{
+    width: 80px;
+    height: 80px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    border-radius: 50%;
+    box-sizing: content-box;
+    margin-left: 10px;
+}
+
+.text-user-info
+{
+    padding: 0 16px;
+    margin: 0;
+}

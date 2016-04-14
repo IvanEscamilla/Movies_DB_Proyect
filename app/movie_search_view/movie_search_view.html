@@ -1,0 +1,65 @@
+<div ng-controller="movieSearchViewCtrl" layout="column" style="height:100%;" ng-cloak>
+    <section layout="row" flex>
+        <md-sidenav
+                class="md-sidenav-left"
+                md-component-id="settingsSideNav"
+                md-is-locked-open="false"
+                md-disable-backdrop
+                md-whiteframe="4">
+            <md-toolbar class="md-theme-indigo sidebar-user-info">
+                <img ng-src="movie_search_view/images/unknown_user.png" class="md-avatar"/>
+                <h3 class=" text-user-info">Luis Escamilla</h3>
+                <h5 class=" text-user-info">liee0177@gmail.com</h5>
+            </md-toolbar>
+            <md-content layout-padding ng-controller="settingsSideNavCtrl">
+                <md-list flex>
+                    <md-list-item class="md-1-line" ng-click="null">
+                        <div layout="row" flex>
+                            <div flex="30"> <md-icon md-svg-src='movie_search_view/images/movie_film_rounded.svg'></md-icon></div>
+                            <div flex="70">Top 50</div>
+                        </div>
+                    </md-list-item>
+
+                    <md-list-item class="md-1-line" ng-click="null">
+                        <div layout="row" flex>
+                            <div flex="30"> <md-icon md-svg-src='movie_search_view/images/movie_film_rounded.svg'></md-icon></div>
+                            <div flex="70">Biblioteca</div>
+                        </div>
+                    </md-list-item>
+
+                    <md-list-item class="md-1-line" ng-click="null">
+                        <div layout="row" flex>
+                            <div flex="30"> <md-icon md-svg-src='movie_search_view/images/movie_film_rounded.svg'></md-icon></div>
+                            <div flex="70">Mi lista de deseos </div>
+                        </div>
+                    </md-list-item>
+                <md-divider ></md-divider>
+            </md-content>
+        </md-sidenav>
+
+        <md-content flex ng-controller="movieSearchViewCtrl">
+            <div layout="column" layout-fill layout-align="top center">
+                <md-toolbar class="md-hue-2">
+                    <div class="md-toolbar-tools">
+                        <md-button class="md-icon-button" ng-click="openSettingsSideNav()" ng-disabled="false">
+                            <md-icon md-svg-src='movie_search_view/images/menu.svg'></md-icon>
+                        </md-button>
+                        <h2>
+                            <span>Top Peliculas</span>
+                        </h2>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="More">
+                            <md-icon md-svg-src="movie_search_view/images/search.svg"></md-icon>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+            </div>
+            <div flex>
+                <div layout="row">
+                    <div flex="80">asdaw</div>
+                    <div flex="20">asdaw</div>
+                </div>
+            </div>
+        </md-content>
+    </section>
+</div>
