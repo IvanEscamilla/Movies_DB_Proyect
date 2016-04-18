@@ -34,6 +34,12 @@
                         </div>
                     </md-list-item>
                 <md-divider ></md-divider>
+                    <md-list-item class="md-1-line" ng-click="initMovies()">
+                        <div layout="row" flex>
+                            <div flex="30"> <md-icon md-svg-src='movie_search_view/images/movie_film_rounded.svg'></md-icon></div>
+                            <div flex="70">Inicializar Base de datos </div>
+                        </div>
+                    </md-list-item>
             </md-content>
         </md-sidenav>
 
@@ -48,7 +54,11 @@
                             <span>Top Peliculas</span>
                         </h2>
                         <span flex></span>
-                        <md-button class="md-icon-button" aria-label="More">
+                        <md-input-container md-theme="input" flex class="md-block search-input" ng-show="showSearch">
+                            <label>Buscar pot Titulo, actor, director, escritor</label>
+                            <input ng-model="search" do-Search="searchMovie()">
+                        </md-input-container>
+                        <md-button class="md-icon-button" ng-click="showSearch = !showSearch" aria-label="More">
                             <md-icon md-svg-src="movie_search_view/images/search.svg"></md-icon>
                         </md-button>
                     </div>
@@ -57,33 +67,88 @@
             <div flex>
                 <div layout="row">
                     <div flex="80" class="cards-container">
-                        <div class="card card-1">
+
+                        <div ng-repeat="movie in movieArr" class="card card-1">
                                 <div class="poster">
+                                    <img class ="poster-img" ng-src="{{movie.posterUrl}}">
                                 </div>
-                        </div>
-                        <div class="card card-1">
-                            <div class="poster">
+                                <div class="card-title">
+                                    <h1 class="document-title">
+                                        <div>{{movie.title}}</div>
+                                    </h1>
+                                </div>
+                                <div class="document-subtitles">
+                                    <div class="right-info">
+                                        <a class="document-subtitle info-star-rating id-no-nav">
+                                            <div class="tiny-star star-rating-non-editable-container">
+                                                <div class="current-rating" style="width: {{(movie.imdb[0].imdbRating * 10)}}%;"></div>
+                                            </div>
+                                        </a>
+                                        <span class="document-subtitle ratings-info">
+                                            <span class="rating-count" aria-label="216 calificaciones">{{movie.imdb[0].imdbVotes}}</span>
+                                            <span class="reviewers-small"></span>
+                                        </span>
+                                    </div>
+                                    <div class="left-info">
+                                        <div class="document-subtitle">({{returnLanguages(movie.languages)}})</div>
+                                        <div class="document-subtitle">{{returnCountries(movie.countries)}}</div>
+                                        <div class="document-subtitle">{{movie.year}}</div>
+                                        <div class="document-subtitle">{{movie.duration}}</div>
+                                        <div>
+                                            <a class="document-subtitle category">
+                                                <span itemprop="genre">{{returnGenders(movie.generes)}}</span>
+                                            </a>
+                                        </div>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <p>{{movie.plot}}</p>
+                                </div>
+
+                                <div class="details-section cast-credit">
+                                    <div class="details-section-contents">
+                                    <h1 class="heading">Reparto y créditos</h1>
+                                    <div class="cc-contents contains-text-link movies-secondary-color">
+                                        <div class="cc-box" flex>
+                                            <h2 class="cc-box-label">Actores</h2>
+                                            <div ng-repeat="actor in movie.actors" class="cc-box-contents">
+                                                <span>
+                                                    <a href="">
+                                                        <span>{{actor.name}}</span>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="cc-box" flex>
+                                            <h2 class="cc-box-label">Directores</h2>
+                                            <div ng-repeat="director in movie.directors" class="cc-box-contents">
+                                                <span>
+                                                    <a href="">
+                                                        <span>{{director.name}}</span>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="cc-box" flex>
+                                            <h2 class="cc-box-label">Escritores</h2>
+                                            <div ng-repeat="writer in movie.writers" class="cc-box-contents">
+                                                <span>
+                                                    <a href="">
+                                                        <span>{{writer.name}}</span>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="card card-1"><md-card md-theme="default" md-theme-watch>
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <span class="md-headline">Card with image</span>
-                                    <span class="md-subhead">Large</span>
-                                </md-card-title-text>
-                                <md-card-title-media>
-                                    <div class="md-media-lg card-media"></div>
-                                </md-card-title-media>
-                            </md-card-title>
-                            <md-card-actions layout="row" layout-align="end center">
-                                <md-button>Action 1</md-button>
-                                <md-button>Action 2</md-button>
-                            </md-card-actions>
-                        </md-card></div>
-                        <div class="card card-1"></div>
                     </div>
-                    <div flex="20">asdaw</div>
+                    <div flex="20">En construcción</div>
                 </div>
             </div>
         </md-content>
