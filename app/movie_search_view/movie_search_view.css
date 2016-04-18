@@ -84,7 +84,7 @@ body {
     position: relative;
     height: 15em;
     width: 12em;
-    box-shadow: 5px 7px 13px rgba(0,0,0,0.12), 5px 7px 13px rgba(0,0,0,0.24)
+    box-shadow: 5px 7px 13px rgba(0,0,0,0.12), 5px 7px 13px rgba(0,0,0,0.24);
     transition: all 0.2s ease-in-out;
 }
 .search-input

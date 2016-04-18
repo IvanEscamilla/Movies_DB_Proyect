@@ -2,6 +2,9 @@
  * Created by Luis Ivan on 16/04/2016.
  */
 
+var serverURL = "http://ec2-52-38-90-20.us-west-2.compute.amazonaws.com";
+//var serverURL = "http://localhost:120";
+
 var moviesWebServices = angular.module('moviesWebServices', ['ngResource']);
 /*
 moviesWebServices.factory('moviePost', ['$resource',
@@ -19,14 +22,14 @@ moviesWebServices.factory('moviePost', ['$resource',
     function($resource){
         return $resource('', {}, {
             get: {
-                url: 'http://localhost:120/admin/movies/get_movie',
+                url: serverURL+'/admin/movies/get_movie',
                 method: 'POST',
                 params: {data: '@data'},
                 isArray: false,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
             },
             add: {
-                url: 'http://localhost:120/admin/insert/new_movie',
+                url: serverURL+'/admin/insert/new_movie',
                 method: 'POST',
                 params: {data: '@data'},
                 isArray: false,
