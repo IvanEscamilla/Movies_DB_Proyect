@@ -40,6 +40,28 @@
                             <div flex="70">Inicializar Base de datos </div>
                         </div>
                     </md-list-item>
+
+                    <md-list-item class="md-1-line" ng-click="exportarBD()">
+                        <div layout="row" flex>
+                            <div flex="30"> <md-icon md-svg-src='movie_search_view/images/movie_film_rounded.svg'></md-icon></div>
+                            <div flex="70">Dump Base de datos </div>
+                        </div>
+                    </md-list-item>
+
+                    <md-divider ></md-divider>
+                    <md-list-item class="md-1-line" ng-click="showPrompt()">
+                        <div layout="row" flex>
+                            <div flex="30"> <md-icon md-svg-src='movie_search_view/images/movie_film_rounded.svg'></md-icon></div>
+                            <div flex="70">War Game!! </div>
+                        </div>
+                    </md-list-item>
+                    <md-divider ></md-divider>
+                    <md-list-item  class="md-1-line" ng-click="testSpinner()">
+                        <div layout="row" flex>
+                            <div flex="30"> <md-icon md-svg-src='movie_search_view/images/movie_film_rounded.svg'></md-icon></div>
+                            <div flex="70">Test Spinner </div>
+                        </div>
+                    </md-list-item>
             </md-content>
         </md-sidenav>
 
@@ -67,7 +89,6 @@
             <div flex>
                 <div layout="row">
                     <div flex="80" class="cards-container">
-
                         <div ng-repeat="movie in movieArr" class="card card-1">
                                 <div class="poster">
                                     <img class ="poster-img" ng-src="{{movie.posterUrl}}">
@@ -146,6 +167,12 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div ng-if="movieArr.length == 0">
+                            <h3 style="text-align: center; margin-top: 2em">Sin resultados...</h3>
+                            <md-button ng-click="getFromOmdb()" style="height: 2em;left: 36em;width: 14em;" class="md-raised md-primary">
+                                Buscar en Ombd!!
+                            </md-button>
                         </div>
                     </div>
                     <div flex="20">En construcción</div>

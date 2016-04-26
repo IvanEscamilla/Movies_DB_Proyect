@@ -1,0 +1,42 @@
+<md-dialog aria-label="The War Game!!"  ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>The War Game!!</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="movie_search_view/images/close.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div layout="row" class="dialog-container">
+                    <div flex>
+                        <md-input-container class="md-block">
+                            <label>Input</label>
+                            <textarea ng-model="input" md-maxlength="1000" rows="10" md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                    <span flex></span>
+                    <md-button ng-click="processWar(input)" style="height: 2em;" class="md-raised md-primary">
+                        War!!
+                    </md-button>
+                    <span flex></span>
+                    <div flex>
+                        <md-input-container class="md-block">
+                            <label>Output</label>
+                            <textarea ng-model="output" md-maxlength="1000" rows="10" md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="answer('Ok')" style="margin-right:20px;">
+                Ok
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

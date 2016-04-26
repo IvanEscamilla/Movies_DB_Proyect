@@ -4,10 +4,11 @@
 angular.module('myApp', [
   'ngRoute',
   'movie_search_view',
-  'myApp.version'
+  'myApp.version',
+  'movie_home_view'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/search'});
+  $routeProvider.otherwise({redirectTo: '/home'});
 }]).run(function($rootScope)
 {
   $rootScope.response = [];

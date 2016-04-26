@@ -2,8 +2,8 @@
  * Created by Luis Ivan on 16/04/2016.
  */
 
-var serverURL = "http://ec2-52-38-90-20.us-west-2.compute.amazonaws.com";
-//var serverURL = "http://localhost:120";
+//var serverURL = "http://ec2-52-38-90-20.us-west-2.compute.amazonaws.com";
+var serverURL = "http://localhost:120";
 
 var moviesWebServices = angular.module('moviesWebServices', ['ngResource']);
 /*
@@ -35,11 +35,30 @@ moviesWebServices.factory('moviePost', ['$resource',
                 isArray: false,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
             },
+            wargame: {
+                url: serverURL+'/admin/algoritmos/wargame',
+                method: 'POST',
+                params: {data: '@data'},
+                isArray: false,
+                headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+            },
             get_movies_json: {
                 url: 'movie_search_view/movies_json/movies.json',
                 method: 'GET',
                 params: {},
                 isArray: true,
+            },
+            getOmdb: {
+                url: 'http://www.omdbapi.com/',
+                method: 'GET',
+                params: {data: '@data'},
+                isArray: false,
+            },
+            dumpdb: {
+                url: serverURL+'/admin/movies/dump_database',
+                method: 'POST',
+                params: {},
+                isArray: false,
             },
         });
     }]);

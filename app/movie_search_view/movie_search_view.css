@@ -215,7 +215,6 @@ md-content.md-default-theme {
 .details-section {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    background-color: #f5f5f5;
     display: block;
     overflow: hidden;
     /* padding: 19px 50px 0 248px; */
@@ -263,4 +262,235 @@ md-content.md-default-theme {
 
 .cast-credit .cc-box-label {
     margin-bottom: 5px;
+}
+
+.dialog-container
+{
+    height: 32em;
+    width: 77em;
+}
+
+.spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height:60px;
+    width:60px;
+    margin:0px auto;
+    -webkit-animation: rotation .6s infinite linear;
+    -moz-animation: rotation .6s infinite linear;
+    -o-animation: rotation .6s infinite linear;
+    animation: rotation .6s infinite linear;
+    border-left:6px solid rgba(0,174,239,.15);
+    border-right:6px solid rgba(0,174,239,.15);
+    border-bottom:6px solid rgba(0,174,239,.15);
+    border-top:6px solid rgba(0,174,239,.8);
+    border-radius:100%;
+}
+
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+    from {-o-transform: rotate(0deg);}
+    to {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+}
+
+.json-print-prop {
+    color: darkmagenta;
+}
+
+.json-print-bool {
+    color: darkorange;
+}
+
+.json-print-true {
+    color: darkorange;
+}
+
+.json-print-false {
+    color: darkorange;
+}
+
+.json-print-number {
+    color: darkblue;
+}
+
+.json-print-zero {
+    color: darkcyan;
+}
+
+.json-print-plus {
+    color: darkblue;
+}
+
+.json-print-minus {
+    color: darkred;
+}
+
+.json-print-null {
+    color: darkorange;
+}
+
+.json-print-string {
+    color:darkgreen;
+}
+
+.json-print-object {
+    color: darkgray;
+}
+
+.json-print-array {
+    color: darkgray;
+}
+
+pre {
+    font-weight: bold;
+}
+
+.json_data {
+    height: 33em;
+    overflow: scroll;
+}
+
+/*BM CSS animation*/
+.spinner-container-failed {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    margin-left: -204px;
+}
+.spinner-container-failed .path {
+    stroke-dasharray: 150,150;
+    stroke-dashoffset: 0;
+    stroke: rgba(216, 216, 216, 1);
+    stroke-linecap: round;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.spinner-container-finished {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    margin-left: -204px;
+}
+.spinner-container-finished .path {
+    stroke-dasharray: 150,150;
+    stroke-dashoffset: 0;
+    stroke: rgba(139, 195, 74, 1);
+    stroke-linecap: round;
+    -webkit-animation: dash-finish 1s ease-in-out;
+    animation: dash-finish 1s ease-in-out;
+}
+.spinner-container {
+    -webkit-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    margin-left: -204px;
+}
+.spinner-container .path {
+    stroke-dasharray: 1,150;
+    stroke-dashoffset: 0;
+    stroke: rgba(139, 195, 74, 1);
+    stroke-linecap: round;
+    -webkit-animation: dash 1.5s ease-in-out infinite;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes rotate{
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes dash-finish {
+    0% {
+        stroke: rgba(139, 195, 74, 0.1);
+    }
+    100% {
+        stroke: rgba(139, 195, 74, 1);
+    }
+}
+@-webkit-keyframes dash-finish {
+    0% {
+        stroke: rgba(139, 195, 74, 0.1);
+    }
+    100% {
+        stroke: rgba(139, 195, 74, 1);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1,150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90,150;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 90,150;
+        stroke-dashoffset: -124;
+    }
+}
+@-webkit-keyframes dash {
+    0% {
+        stroke-dasharray: 1,150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90,150;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 90,150;
+        stroke-dashoffset: -124;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0.5;
+        transform: scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+@-webkit-keyframes appear {
+    0% {
+        opacity: 0.5;
+        transform: scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+#spinner_container {
+    text-align: center;
+}
+
+.dialog-container-BM
+{
+    height: 24em;
+    width: 30em;
 }
